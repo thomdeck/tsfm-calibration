@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "tsfm-calibration"
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/thomdeck/tsfm-calibration"
+authors:
+  - family-names: Decker
+    given-names: Thomas
+  - family-names: Tresp
+    given-names: Volker
+preferred-citation:
+  type: conference-paper
+  title: "Evaluating Uncertainty Calibration in Probabilistic Time Series Foundation Models"
+  authors:
+    - family-names: Decker
+      given-names: Thomas
+    - family-names: Tresp
+      given-names: Volker
+  collection-title: "Advances in Neural Information Processing Systems (NeurIPS)"
+  year: 2026
+  url: "https://arxiv.org/abs/2611.03592"
+  identifiers:
+    - type: other
+      value: "arXiv:2611.03592"
+      description: "arXiv preprint"

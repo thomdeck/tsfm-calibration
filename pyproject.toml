@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tsfm-calibration"
+version = "0.1.0"
+description = "Calibration evaluation and recalibration for probabilistic time series foundation models"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Thomas Decker" }, { name = "Volker Tresp" }]
+keywords = ["time series", "foundation models", "calibration", "uncertainty", "forecasting"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "scikit-learn>=1.2",
+    "pandas>=1.5",
+]
+
+[project.urls]
+Repository = "https://github.com/thomdeck/tsfm-calibration"
+Paper = "https://arxiv.org/abs/2611.03592"
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.6"]
+chronos = ["chronos-forecasting>=2.0", "torch"]
+moirai = ["uni2ts>=1.2", "gluonts"]
+tirex = ["tirex-ts>=1.0", "torch"]
+notebook = ["tsfm-calibration[plot]", "jupyter", "tqdm", "huggingface_hub", "pyarrow"]
+dev = ["ruff"]
+
+[project.scripts]
+tsfm-calibration = "tsfm_calibration.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tsfm_calibration"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E741", "B905"]
